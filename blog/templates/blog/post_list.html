@@ -1,22 +1,11 @@
-<html>
-    <head>
-        <title>Ulzhan</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 13.12.2018, 12:14</p>
-            <h1><a href="">Ashykhat</a></h1>
-            <p>Salem, dostar!  Meniń esimim  Uljan. Men ashykhattar jasau boıunsha uzak jyldar boıy oilanyp júrdim. Dúkenderde jàne ulken supermarketterde jıi kezdestire bastadym. Bir kúni magan bir oi keldi: ôzimde ashykhattardy jasaı almaımyn ba? Olardyn jany bar emes pe? Printerler qanshalykty jaksy bolsa da, adamnyń jasalgan dúniege jetpeıdi.  Búgingi kunnen bastap sızdermen jumystarymmen bólisúge bel budym. Sizderge unatady degen úmittemin</p>
-        </div>
-
-        <div>
-            <p>published: 14.12.2018, 12:14</p>
-            <h1><a href="">Alystamyn</a></h1>
-            <p>Men senen alysta jursem de, ashykhattaryndy umitpaimyn</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
